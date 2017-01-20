@@ -44,9 +44,9 @@ public class Device1 {
 
 	public void startSubscribtionLCient() {
 		//String service_name = "Geospatial Analytics-4y";
-		String topic = "boschdemo/events";
+		String topic = "demo/events";
 		//int qos = 0; // qos = quality of service: {0, 1, 2}
-		String broker = "tcp://aifbkos.aifb.uni-karlsruhe.de:1883";
+		String broker = "tcp://host:1883";
 		// String broker = "tcp://localhost:1883";
 		String clientId = "Device1";
 
@@ -195,7 +195,7 @@ public class Device1 {
 		//System.out.println(body);
 		try {
 			MqttMessage mqttm = new MqttMessage(body.getBytes());
-			subscribedClient.publish("boschdemo/device", mqttm);
+			subscribedClient.publish("demo/device", mqttm);
 			System.out.println("Message published");
 		} catch (MqttException me) {
 			System.out.println("reason " + me.getReasonCode());
