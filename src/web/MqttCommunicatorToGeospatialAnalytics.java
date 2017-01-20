@@ -34,7 +34,7 @@ public class MqttCommunicatorToGeospatialAnalytics {
 	private static final String service_instance = "a9263b31-a719-43e3-9db7-3733e2efac6a";
 	private static final String service_binding = "21c7d637-8807-447a-aee3-5c37fbd13046";
 	private static final String user = "57709025-4ca7-4ce9-8336-49ac4bf332bb";
-	private static final String password = "42edd1f3-05ce-4607-a06c-10dcf9c12fee";
+	private static final String password = "password";
 
 	public static void main(String[] args) {
 
@@ -117,9 +117,9 @@ public class MqttCommunicatorToGeospatialAnalytics {
 			JSONObject json = new JSONObject();
 			//json.put("mqtt_uid", "iamuser");
 			//json.put("mqtt_pw", "thepass");
-			json.put("mqtt_uri", "aifbkos.aifb.uni-karlsruhe.de:1883");
-			json.put("mqtt_input_topics", "boschdemo/device");
-			json.put("mqtt_notify_topic", "boschdemo/events");
+			json.put("mqtt_uri", "host:1883");
+			json.put("mqtt_input_topics", "demo/device");
+			json.put("mqtt_notify_topic", "bdemo/events");
 			json.put("device_id_attr_name", "ID");
 			json.put("latitude_attr_name", "lat");
 			json.put("longitude_attr_name", "lng");
@@ -161,10 +161,10 @@ public class MqttCommunicatorToGeospatialAnalytics {
 
 	public void startPublisherMqttClient() {
 		String service_name = "Geospatial Analytics-4y";
-		String topic = "boschdemo/test";
+		String topic = "demo/test";
 		String content = "Message from MqttPublishSample";
 		int qos = 2; // qos = quality of service: {0, 1, 2}
-		String broker = "tcp://aifbkos.aifb.uni-karlsruhe.de:1883";
+		String broker = "host:1883";
 		String clientId = "JavaSampl12345";
 
 		try {
@@ -198,7 +198,7 @@ public class MqttCommunicatorToGeospatialAnalytics {
 
 	public void startSubscribtionLCient() {
 		String service_name = "Geospatial Analytics-4y";
-		String topic = "boschdemo";
+		String topic = "demo";
 		int qos = 0; // qos = quality of service: {0, 1, 2}
 		// String broker = "tcp://aifbkos.aifb.uni-karlsruhe.de:1883";
 		String broker = "tcp://localhost:1883";
